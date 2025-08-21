@@ -5,3 +5,5 @@ python-dotenv
 langgraph
 groq
 openai
+flask
+flask-cors
