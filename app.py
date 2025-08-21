@@ -4,8 +4,16 @@ from flask_cors import CORS
 app = Flask(__name__)
 app.secret_key = "mysecretkey"
 
-# Allow React (running on localhost:3000) to access this API
-CORS(app, supports_credentials=True, origins=["https://frontend-zeta-mauve-71.vercel.app/"])
+# Enable CORS for local development and your deployed frontend
+CORS(app, supports_credentials=True, origins=[
+    "http://localhost:3000",  # For local React
+    "https://frontend-zeta-mauve-71.vercel.app"  # Your deployed frontend
+])
+
+
+@app.route("/", methods=["GET"])
+def home():
+    return jsonify({"message": "Backend is running!"})
 
 
 @app.route("/api/login", methods=["POST"])
