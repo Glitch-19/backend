@@ -6,8 +6,8 @@ app.secret_key = "mysecretkey"
 
 # Enable CORS for local development and your deployed frontend
 CORS(app, supports_credentials=True, origins=[
-    "http://localhost:3000",  # For local React
-    "https://frontend-zeta-mauve-71.vercel.app"  # Your deployed frontend
+    # For local React
+        "https://frontend-zeta-mauve-71.vercel.app"  # Your deployed frontend
 ])
 
 
