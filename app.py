@@ -24,6 +24,8 @@ def login():
 
     if username == "tanya" and password == "1234":
         session["username"] = username
+        session["password"] = password
+        
         return jsonify({"message": "Login successful", "username": username}), 200
     else:
         return jsonify({"error": "Invalid credentials"}), 401
